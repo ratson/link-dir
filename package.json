@@ -1,6 +1,6 @@
 {
   "name": "link-dir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cross-platform directory linking",
   "main": "dist/index.js",
   "files": [
