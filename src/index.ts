@@ -22,5 +22,6 @@ export default async function relSymlink (src: string, dest: string) {
       await symlink(rel, dest, symlinkType)
       return
     }
+    throw err
   }
 }
