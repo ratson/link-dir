@@ -43,7 +43,7 @@
     "typescript": "^2.0.3"
   },
   "dependencies": {
-    "mkdirp-promise": "^3.0.1",
+    "mkdirp-promise": "^4.0.1",
     "mz": "^2.4.0"
   },
   "mos": {
