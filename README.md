@@ -15,7 +15,16 @@ lack permission to create them
 npm i -S link-dir
 ```
 
-## Usage
+## CLI Usage
+
+Lets suppose you'd like to self-require your package. You can link it to its own node_modules:
+
+```sh
+# from -> to
+link-dir . node_modules/my-package
+```
+
+## API Usage
 
 <!--@example('./example.js')-->
 ```js
