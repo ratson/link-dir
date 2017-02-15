@@ -7,9 +7,10 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
     "target": "es6",
-    "outDir": "dist",
+    "outDir": "lib",
     "module": "commonjs",
     "moduleResolution": "node"
   },
@@ -23,7 +24,6 @@
   "files": [
     "src/cli.ts",
     "src/index.ts",
-    "src/forceSymlink.ts",
     "typings/index.d.ts"
   ]
 }
