@@ -1,5 +1,5 @@
 'use strict'
-const linkDir = require('./dist').default
+const linkDir = require('./lib')
 const path = require('path')
 const cwd = process.cwd()
 

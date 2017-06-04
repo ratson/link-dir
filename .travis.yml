@@ -3,3 +3,15 @@ node_js:
   - 4
   - 6
 sudo: false
+
+cache:
+  directories:
+    - $HOME/.pnpm-store
+
+sudo: false
+before_install:
+  - npm install -g pnpm
+install:
+  - pnpm install
+script:
+  - npm test

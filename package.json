@@ -1,15 +1,18 @@
 {
   "name": "link-dir",
-  "version": "1.0.2",
-  "description": "Cross-platform directory linking",
-  "main": "dist/index.js",
+  "version": "2.0.1",
+  "description": "Link directory",
+  "main": "lib/index.js",
   "files": [
-    "dist/"
+    "lib"
   ],
+  "typings": "lib/index.d.ts",
+  "bin": "lib/cli.js",
   "keywords": [
     "link",
     "linking",
-    "junction",
+    "hardlink",
+    "hardlinking",
     "directory",
     "dir",
     "folder"
@@ -35,16 +38,19 @@
   },
   "homepage": "https://github.com/zkochan/link-dir#readme",
   "devDependencies": {
-    "@types/mz": "0.0.30",
-    "@types/node": "^6.0.45",
     "cash-rm": "^0.2.0",
     "mos": "^1.3.1",
     "mos-plugin-readme": "^1.0.4",
-    "typescript": "^2.0.3"
+    "typescript": "^2.2.0"
   },
   "dependencies": {
-    "mkdirp-promise": "^4.0.1",
-    "mz": "^2.4.0"
+    "@types/mz": "0.0.30",
+    "@types/node": "^6.0.45",
+    "bole": "^3.0.2",
+    "graceful-fs": "^4.1.11",
+    "mkdirp-promise": "^5.0.1",
+    "mz": "^2.4.0",
+    "rimraf-then": "^1.0.1"
   },
   "mos": {
     "plugins": [
