@@ -7,7 +7,7 @@ import bole = require('bole')
 
 const logger = bole('link-dir')
 
-export default async function (existingDir: string, newDir: string) {
+async function linkDir (existingDir: string, newDir: string) {
   const stage = `${newDir}+stage`
   await rimraf(stage)
   await hardlinkDir(existingDir, stage)
@@ -53,3 +53,8 @@ async function safeLink(existingPath: string, newPath: string, stat: Stats) {
     throw err
   }
 }
+
+// for backward compatibility
+linkDir['default'] = linkDir
+
+export = linkDir
