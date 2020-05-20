@@ -1,8 +1,8 @@
-import {Stats} from 'fs';
+import {Stats} from 'fs'
+import * as del from 'del'
 import path = require('path')
 import fs = require('mz/fs')
 import mkdirp = require('mkdirp-promise')
-import rimraf = require('rimraf-then')
 import bole = require('bole')
 
 const logger = bole('link-dir')
@@ -10,12 +10,12 @@ const logger = bole('link-dir')
 async function linkDir (existingDir: string, newDir: string) {
   const stage = `${newDir}+stage`
   try {
-    await rimraf(stage)
+    await del([stage])
     await hardlinkDir(existingDir, stage)
-    await rimraf(newDir)
+    await del([newDir])
     await fs.rename(stage, newDir)
   } catch (err) {
-    try { await rimraf(stage) } catch (err) {}
+    try { await del([stage]) } catch (err) {}
     throw err
   }
 }
