@@ -26,7 +26,7 @@ link-dir . node_modules/my-package
 <!--@example('./example.js')-->
 ```js
 'use strict'
-const linkDir = require('@frat/link-dir')
+const { linkDir } = require('@frat/link-dir')
 const path = require('path')
 const cwd = process.cwd()
 

@@ -59,7 +59,6 @@ async function safeLink(existingPath: string, newPath: string, stat: Stats) {
   }
 }
 
-// for backward compatibility
-linkDir['default'] = linkDir
+export { linkDir }
 
-export = linkDir
+export default linkDir
