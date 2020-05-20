@@ -1,9 +1,9 @@
-# link-dir
+# @frat/link-dir
 
 > Link directory
 
-<!--@shields('npm', 'travis', 'appveyor')-->
-[![npm version](https://img.shields.io/npm/v/link-dir.svg)](https://www.npmjs.com/package/link-dir) [![Build Status](https://img.shields.io/travis/zkochan/link-dir/master.svg)](https://travis-ci.org/zkochan/link-dir) [![Build Status on Windows](https://img.shields.io/appveyor/ci/zkochan/link-dir/master.svg)](https://ci.appveyor.com/project/zkochan/link-dir/branch/master)
+<!--@shields('npm')-->
+[![npm version](https://img.shields.io/npm/v/@frat/link-dir.svg)](https://www.npmjs.com/package/@frat/link-dir)
 <!--/@-->
 
 Link each file in a directory recursively.
@@ -11,7 +11,7 @@ Link each file in a directory recursively.
 ## Installation
 
 ```sh
-npm i -S link-dir
+npm i -S @frat/link-dir
 ```
 
 ## CLI Usage
@@ -26,7 +26,7 @@ link-dir . node_modules/my-package
 <!--@example('./example.js')-->
 ```js
 'use strict'
-const linkDir = require('link-dir')
+const linkDir = require('@frat/link-dir')
 const path = require('path')
 const cwd = process.cwd()
 

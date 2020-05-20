@@ -1,5 +1,5 @@
 {
-  "name": "link-dir",
+  "name": "@frat/link-dir",
   "version": "2.0.1",
   "description": "Link directory",
   "main": "lib/index.js",
@@ -23,20 +23,13 @@
     "tsc": "rm -rf dist && tsc",
     "prepublish": "npm run tsc"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zkochan/link-dir.git"
-  },
+  "repository": "ratson/link-dir.git",
   "author": {
     "name": "Zoltan Kochan",
     "email": "zoltan.kochan@gmail.com",
     "url": "http://kochan.io"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zkochan/link-dir/issues"
-  },
-  "homepage": "https://github.com/zkochan/link-dir#readme",
   "devDependencies": {
     "cash-rm": "^0.2.0",
     "mos": "^1.3.1",
