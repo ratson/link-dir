@@ -1,8 +1,7 @@
 import {Stats} from 'fs'
+import * as fse from 'fs-extra'
 import * as del from 'del'
 import path = require('path')
-import fs = require('mz/fs')
-import mkdirp = require('mkdirp-promise')
 import bole = require('bole')
 
 const logger = bole('link-dir')
@@ -13,7 +12,7 @@ async function linkDir (existingDir: string, newDir: string) {
     await del([stage])
     await hardlinkDir(existingDir, stage)
     await del([newDir])
-    await fs.rename(stage, newDir)
+    await fse.move(stage, newDir)
   } catch (err) {
     try { await del([stage]) } catch (err) {}
     throw err
@@ -21,14 +20,14 @@ async function linkDir (existingDir: string, newDir: string) {
 }
 
 async function hardlinkDir(existingDir: string, newDir: string) {
-  await mkdirp(newDir)
-  const dirs = await fs.readdir(existingDir)
+  await fse.ensureDir(newDir)
+  const dirs = await fse.readdir(existingDir)
   await Promise.all(
     dirs
       .map(async (relativePath: string) => {
         const existingPath = path.join(existingDir, relativePath)
         const newPath = path.join(newDir, relativePath)
-        const stat: any = await fs.lstat(existingPath)
+        const stat: any = await fse.lstat(existingPath)
         if (stat.isSymbolicLink() || stat.isFile()) {
           return safeLink(existingPath, newPath, stat)
         }
@@ -41,7 +40,7 @@ async function hardlinkDir(existingDir: string, newDir: string) {
 
 async function safeLink(existingPath: string, newPath: string, stat: Stats) {
   try {
-    await fs.link(existingPath, newPath)
+    await fse.link(existingPath, newPath)
   } catch (err) {
     // shouldn't normally happen, but if the file was already somehow linked,
     // the installation should not fail
